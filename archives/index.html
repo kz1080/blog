@@ -68,7 +68,7 @@
         isCategory: false,
         fancybox_js: "//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.js",
         scrollreveal: "//cdn.bootcss.com/scrollReveal.js/3.1.4/scrollreveal.min.js",
-        search: undefined
+        search: true
     }
 </script>
 
@@ -100,6 +100,13 @@
 
         
 
+        
+            <form id="search-form">
+            <input type="text" id="local-search-input" name="q" placeholder="search..." class="search form-control" autocomplete="off" autocorrect="off" searchonload="false" />
+            <i class="fa fa-times" onclick="resetSearch()"></i>
+            </form>
+            <div id="local-search-result"></div>
+            <p class='no-result'>No results found <i class='fa fa-spinner fa-pulse'></i></p>
         
 
 
@@ -177,7 +184,7 @@
                 
                 <section class="switch-part switch-part2">
                     <div class="widget tagcloud" id="js-tagcloud">
-                        <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Hexo/">Hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Hexo-Markdown-博客/">Hexo Markdown 博客</a></li></ul>
+                        <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Hexo/">Hexo</a></li></ul>
                     </div>
                 </section>
                 
@@ -269,6 +276,72 @@
   <div class="archive-article-inner">
     <header class="archive-article-header">
           <div class="article-meta">
+              <a href="/blog/2017/03/13/Hexo如何配置博文/" class="archive-article-date">
+      <time datetime="2017-03-13T05:41:31.000Z" itemprop="datePublished">03-13</time>
+</a>
+
+
+        </div>
+         
+  
+    <h1 itemprop="name">
+      <a class="archive-article-title" href="/blog/2017/03/13/Hexo如何配置博文/">Hexo如何配置博文</a>
+    </h1>
+  
+
+        <div class="article-info info-on-archive">
+          
+
+          
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/Hexo/">Hexo</a></li></ul>
+    </div>
+
+        </div>
+        <div class="clearfix"></div>
+    </header>
+  </div>
+</article>
+  
+    
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+          <div class="article-meta">
+              <a href="/blog/2017/03/13/Hexo搭建个人网站/" class="archive-article-date">
+      <time datetime="2017-03-13T04:41:31.000Z" itemprop="datePublished">03-13</time>
+</a>
+
+
+        </div>
+         
+  
+    <h1 itemprop="name">
+      <a class="archive-article-title" href="/blog/2017/03/13/Hexo搭建个人网站/">Hexo搭建个人网站</a>
+    </h1>
+  
+
+        <div class="article-info info-on-archive">
+          
+
+          
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/Hexo/">Hexo</a></li></ul>
+    </div>
+
+        </div>
+        <div class="clearfix"></div>
+    </header>
+  </div>
+</article>
+  
+    
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+          <div class="article-meta">
               <a href="/blog/2017/03/13/Hexo之Markdown/" class="archive-article-date">
       <time datetime="2017-03-13T02:41:31.000Z" itemprop="datePublished">03-13</time>
 </a>
@@ -302,8 +375,8 @@
   <div class="archive-article-inner">
     <header class="archive-article-header">
           <div class="article-meta">
-              <a href="/blog/2017/03/13/Hexo如何配置博文/" class="archive-article-date">
-      <time datetime="2017-03-13T02:41:31.000Z" itemprop="datePublished">03-13</time>
+              <a href="/blog/2017/03/13/hello-world/" class="archive-article-date">
+      <time datetime="2017-03-13T01:41:31.000Z" itemprop="datePublished">03-13</time>
 </a>
 
 
@@ -311,7 +384,7 @@
          
   
     <h1 itemprop="name">
-      <a class="archive-article-title" href="/blog/2017/03/13/Hexo如何配置博文/">Hexo如何配置博文</a>
+      <a class="archive-article-title" href="/blog/2017/03/13/hello-world/">Hello World</a>
     </h1>
   
 
@@ -320,67 +393,9 @@
 
           
     <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/Hexo-Markdown-博客/">Hexo Markdown 博客</a></li></ul>
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/Hexo/">Hexo</a></li></ul>
     </div>
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-          <div class="article-meta">
-              <a href="/blog/2017/03/10/Hexo搭建个人网站/" class="archive-article-date">
-      <time datetime="2017-03-10T09:37:49.334Z" itemprop="datePublished">03-10</time>
-</a>
-
-
-        </div>
-         
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/blog/2017/03/10/Hexo搭建个人网站/">Hexo搭建个人网站</a>
-    </h1>
-  
-
-        <div class="article-info info-on-archive">
-          
-
-          
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-          <div class="article-meta">
-              <a href="/blog/2017/03/10/hello-world/" class="archive-article-date">
-      <time datetime="2017-03-10T07:59:40.974Z" itemprop="datePublished">03-10</time>
-</a>
-
-
-        </div>
-         
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/blog/2017/03/10/hello-world/">Hello World</a>
-    </h1>
-  
-
-        <div class="article-info info-on-archive">
-          
-
-          
         </div>
         <div class="clearfix"></div>
     </header>
