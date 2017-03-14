@@ -8,17 +8,17 @@
   <link rel="dns-prefetch" href="https://kz1080.github.io/blog">
   <title>Hexo如何配置博文 | 科子的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Hexo框架使用和目录解析，详细的介绍如何使用Hexo生成网站.">
+  <meta name="description" content="按照教程搭建好了Hexo之后，就让我们开始DIY自己的网站吧！">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Hexo如何配置博文">
 <meta property="og:url" content="https://kz1080.github.io/blog/2017/03/13/Hexo如何配置博文/index.html">
 <meta property="og:site_name" content="科子的博客">
-<meta property="og:description" content="Hexo框架使用和目录解析，详细的介绍如何使用Hexo生成网站.">
+<meta property="og:description" content="按照教程搭建好了Hexo之后，就让我们开始DIY自己的网站吧！">
 <meta property="og:image" content="https://kz1080.github.io/blog/blog/path/to/image">
-<meta property="og:updated_time" content="2017-03-13T12:49:03.762Z">
+<meta property="og:updated_time" content="2017-03-14T09:26:54.388Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Hexo如何配置博文">
-<meta name="twitter:description" content="Hexo框架使用和目录解析，详细的介绍如何使用Hexo生成网站.">
+<meta name="twitter:description" content="按照教程搭建好了Hexo之后，就让我们开始DIY自己的网站吧！">
 <meta name="twitter:image" content="https://kz1080.github.io/blog/blog/path/to/image">
   
     <link rel="alternative" href="/atom.xml" title="科子的博客" type="application/atom+xml">
@@ -153,8 +153,9 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>Hexo框架使用和目录解析，详细的介绍如何使用Hexo生成网站.<br><a id="more"></a><br>按照教程搭建好了Hexo之后，就让我们开始DIY自己的网站吧！</p>
-<p>###文件目录<br>调用Hexo初始化后，得到的目录如下：<br>.<br>├── _config.yml<br>├── package.json<br>├── scaffolds<br>├── source<br> |   └── _posts<br>└── themes</p>
+        <p>按照教程搭建好了Hexo之后，就让我们开始DIY自己的网站吧！<br><a id="more"></a></p>
+<p>###文件目录</p>
+<p>调用Hexo初始化后，得到的目录如下：<br>.<br>├── _config.yml<br>├── package.json<br>├── scaffolds<br>├── source<br> |   └── _posts<br>└── themes</p>
 <p>下面依次介绍上面各个文件或者目录的用途：</p>
 <ul>
 <li>_config.yml 站点配置文件，很多全局配置都在这个文件中。</li>
@@ -359,7 +360,7 @@
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hexo init [folder]</div></pre></td></tr></table></figure>
 <p>初始化一个网站。如果没有提供 folder ,Hexo会在当前目录设置网站。</p>
 <p>new</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hexo new [layout] \&lt;title\&gt;</div></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hexo new [layout] &lt;title&gt;</div></pre></td></tr></table></figure>
 <p>创建一篇文章，如果不指定layout，那么就使用 _config.yml 中 default_layout 的值，标题中如果有空格，将整个 title 放到引号中。 比如， hexo new “hello world” 创建一篇叫hello world的文章。</p>
 <p>generate</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hexo generate</div></pre></td></tr></table></figure>
@@ -383,7 +384,7 @@
 </tbody>
 </table>
 <p>publish</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hexo publish [layout] \&lt;filename\&gt;</div></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hexo publish [layout] &lt;filename&gt;</div></pre></td></tr></table></figure>
 <p>发布为草稿</p>
 <p>server</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hexo server</div></pre></td></tr></table></figure>
@@ -428,7 +429,7 @@
 </tbody>
 </table>
 <p>render</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hexo render \&lt;file1&gt; [file2] ...</div></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hexo render &lt;file1&gt; [file2] ...</div></pre></td></tr></table></figure>
 <p>渲染文件</p>
 <table>
 <thead>
@@ -445,13 +446,13 @@
 </tbody>
 </table>
 <p>migrate</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hexo migrate \&lt;<span class="built_in">type</span>&gt;</div></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hexo migrate &lt;<span class="built_in">type</span>&gt;</div></pre></td></tr></table></figure>
 <p>迁移到其他模块的命令。</p>
 <p>clean</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hexo clean</div></pre></td></tr></table></figure>
 <p>删除缓存文件 db.json 以及生成的public目录，当你修改了某些样式或者配置时，如果发现 hexo g 后也没有反应，就可以执行一下这个命令。</p>
 <p>list</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hexo list \&lt;<span class="built_in">type</span>&gt;</div></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hexo list &lt;<span class="built_in">type</span>&gt;</div></pre></td></tr></table></figure>
 <p>列出所有路由</p>
 <p>version</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hexo version</div></pre></td></tr></table></figure>
@@ -479,7 +480,7 @@
 <li>开始写作</li>
 </ol>
 <p>使用下面的命令创建一个新文章：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hexo new [layout] \&lt;title&gt;</div></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hexo new [layout] &lt;title&gt;</div></pre></td></tr></table></figure>
 <p>默认的文章布局是 post ，当然你可用提供自己的布局文件。你可以编辑 _config.yml 修改默认布局。</p>
 <p>Layout（布局）</p>
 <p>Hexo提供了3个默认布局： post 、 page 和 draft 。不同布局的文章会被保存到不同的目录，这取决于它的布局类型。 自定义布局保存到 source/_posts 文件夹。</p>
@@ -548,40 +549,19 @@
 </tbody>
 </table>
 <p>前面hexo提到一个特殊的布局： draft 。 这种布局的帖子保存到 source/_drafts 文件夹。你可以使用 publish 命令移动草稿到 source/_posts 文件夹。 这个命令类似于你使用了 new 。</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hexo publish [layout] \&lt;title&gt;</div></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hexo publish [layout] &lt;title&gt;</div></pre></td></tr></table></figure>
 <p>草稿默认不显示，你可以添加 –draft 选项或者设置 _config.yml 中的 render_drafts 使hexo显示草稿。</p>
 <p>Scaffolds（模版）</p>
 <p>当创建一篇文章,Hexo将构建基于 scaffolds 文件夹中的相应文件。例如:</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hexo new photo <span class="string">"My Gallery"</span></div></pre></td></tr></table></figure>
-<p>当你运行这个命令，要尝试在 scaffolds 文件夹下找到文件名为 photo.md 的模板文件。下面占位符可以使用模板：</p>
-<table>
-<thead>
-<tr>
-<th>占位符</th>
-<th>描述</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>layout</td>
-<td>布局</td>
-</tr>
-<tr>
-<td>title</td>
-<td>文章标题</td>
-</tr>
-<tr>
-<td>date</td>
-<td>发布时间</td>
-</tr>
-</tbody>
-</table>
+<p>当你运行这个命令，要尝试在 scaffolds 文件夹下找到文件名为 photo.md 的模板文件。下面占位符可以使用模板：<br>|占位符    |描述|<br>|–|–|<br>|layout    |布局|<br>|title|    文章标题|<br>|date|    发布时间|</p>
 <ol>
 <li>前置申明</li>
 </ol>
-<p>前置申明的意思是写在文章前面的一块内容，为了对文章进行某些设置。它有两种书写方式：</p>
-<p>YAML方式，以三短线结束<br>``bash<br>title: Hello World</p>
-<h2 id="date-2013-7-13-20-46-25"><a href="#date-2013-7-13-20-46-25" class="headerlink" title="date: 2013/7/13 20:46:25"></a>date: 2013/7/13 20:46:25</h2><figure class="highlight clean"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">JSON方式，以三分号结束</div><div class="line">```bash</div><div class="line"><span class="string">"title"</span>: <span class="string">"Hello World"</span>,</div><div class="line"><span class="string">"date"</span>: <span class="string">"2013/7/13 20:46:25"</span></div><div class="line">;;;</div></pre></td></tr></table></figure>
+<p>前置申明的意思是写在文章前面的一块内容，为了对文章进行某些设置。它有两种书写方式：<br>YAML方式，以三短线结束</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">title: Hello World</div><div class="line">date: 2013/7/13 20:46:25</div></pre></td></tr></table></figure>
+<p>JSON方式，以三分号结束</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="string">"title"</span>: <span class="string">"Hello World"</span>,</div><div class="line"><span class="string">"date"</span>: <span class="string">"2013/7/13 20:46:25"</span></div></pre></td></tr></table></figure>
 <p>设置以及默认值</p>
 <table>
 <thead>
@@ -725,7 +705,7 @@
 </ul>
 <p>安装 hexo-deployer-git</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install hexo-deployer-git --save</div></pre></td></tr></table></figure>
-<p>编辑设置：<br>deploy:<br>  type: git<br>  repo: \<repository url=""><br>  branch: [branch]<br>  message: [message]</repository></p>
+<p>编辑设置：<br>deploy:<br>  type: git<br>  repo: <repository url=""><br>  branch: [branch]<br>  message: [message]</repository></p>
 <table>
 <thead>
 <tr>
