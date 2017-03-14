@@ -168,7 +168,7 @@
                         
                             <li><a href="/blog/archives/">所有文章</a></li>
                         
-                            <li><a href="/blog/tags/">标签云</a></li>
+                            <li><a href="/blog/tags/Hexo/">标签云</a></li>
                         
                             <li><a href="/blog/about/">关于我</a></li>
                         
@@ -190,7 +190,7 @@
                 
                 <section class="switch-part switch-part2">
                     <div class="widget tagcloud" id="js-tagcloud">
-                        <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Hexo/">Hexo</a></li></ul>
+                        <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Hexo/">Hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/test/">test</a></li></ul>
                     </div>
                 </section>
                 
@@ -243,7 +243,7 @@
                 
                     <li><a href="/blog/archives/">所有文章</a></li>
                 
-                    <li><a href="/blog/tags/">标签云</a></li>
+                    <li><a href="/blog/tags/Hexo/">标签云</a></li>
                 
                     <li><a href="/blog/about/">关于我</a></li>
                 
@@ -933,6 +933,12 @@
 
     <nav id="article-nav">
         
+            <div id="article-nav-newer" class="article-nav-title">
+                <a href="/blog/2017/03/14/test/">
+                    test
+                </a>
+            </div>
+        
         
             <div id="article-nav-older" class="article-nav-title">
                 <a href="/blog/2017/03/13/Hexo搭建个人网站/">
@@ -998,27 +1004,24 @@
 
 
     
-        <section id="comments">
-    <style> aside.comment-bar { margin: auto 30px; }</style>
-    <div id="disqus_thread"></div>
+      <div class="duoshuo" id="comments">
+    <div id="comment-box" ></div>
+    <div class="ds-thread" id="ds-thread" data-thread-key="2017/03/13/Hexo如何配置博文/" data-title="Hexo如何配置博文" data-url="https://kz1080.github.io/blog/blog/2017/03/13/Hexo如何配置博文/"></div>
     <script>
-        var disqus_config = function(){
-            this.page.url = 'https://kz1080.github.io/blog/blog/2017/03/13/Hexo如何配置博文/';
-            this.page.identifier = '2017/03/13/Hexo如何配置博文/';
-        };
+        var duoshuoQuery = {short_name:"zout"};
         var loadComment = function(){
             var d = document, s = d.createElement('script');
-            s.src = '//null.disqus.com/embed.js';
-            s.setAttribute('data-timestamp', +new Date());
+            s.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+            s.async = true; s.charset = 'UTF-8';
             (d.head || d.body).appendChild(s);
         }
+
+        
     </script>
     
     <script> loadComment(); </script>
 
-</section>
-
-
+</div>
     
 
 
@@ -1026,7 +1029,9 @@
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/" title="Back to Homepage"><i class="fa fa-home"></i></a>
+            <a href="/blog/2017/03/14/test/" title="Pre: test">
+                <i class="fa fa-angle-left"></i>
+            </a>
         
 
         <a title="Mini Archives"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
@@ -1038,7 +1043,7 @@
         
     </div>
 
-    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/blog/2017/03/13/Hexo如何配置博文/">Hexo如何配置博文</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/2017/03/13/Hexo搭建个人网站/">Hexo搭建个人网站</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/2017/03/13/Hexo之Markdown/">Hexo之Markdown</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/2017/03/13/hello-world/">Hello World</a></li></ul>
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/blog/2017/03/14/test/">test</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/2017/03/13/Hexo如何配置博文/">Hexo如何配置博文</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/2017/03/13/Hexo搭建个人网站/">Hexo搭建个人网站</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/2017/03/13/Hexo之Markdown/">Hexo之Markdown</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/2017/03/13/hello-world/">Hello World</a></li></ul>
 
 
 
