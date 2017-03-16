@@ -216,21 +216,15 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>WiFi控制比较常用的类有<figure class="highlight plain"><figcaption><span>三个类操作，网络主要的状态有三个：</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">* 没有打开WiFi或者移动数据</div><div class="line">* 只打开了WiFi但是并没有连接任何WiFi</div><div class="line">* 连接了WiFi，但是网络不可用</div><div class="line"></div><div class="line">&lt;!-- more --&gt;</div><div class="line">1.ConnectivityManager</div><div class="line">  ConnectivityManager类是网络连接服务管理类，连接的网络状态包括WiFi和移动网络的信息都是通过它来获取：</div><div class="line"> ```bash</div><div class="line"> 	 ConnectivityManager connectivityManager = (ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE);</div><div class="line">     NetworkInfo networkInfo = connectivityManager.getActiveNetworkInfo();</div></pre></td></tr></table></figure></p>
-<p>需要在AndroidManifest.xml文件中加入如下的权限：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">&lt;uses-permission android:name=<span class="string">"android.permission.ACCESS_NETWORK_STATE"</span>/&gt;</div><div class="line">&lt;uses-permission android:name=<span class="string">"android.permission.CHANGE_NETWORK_STATE"</span>/&gt;</div></pre></td></tr></table></figure></p>
-<p>NetworkInfo 包含了当前连接的网络信息，主要有连接的网络类型，网络是否可以等简单的信息。</p>
-<p>  1.1设置首选网络<br>  <figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">connectivityManager</span><span class="selector-class">.setNetworkPreference</span>(<span class="selector-tag">ConnectivityManager</span><span class="selector-class">.TYPE_WIFI</span>);</div></pre></td></tr></table></figure></p>
-<p> 当首选网络连接不可用或者连接丢失时，Android将自动尝试使用第二优先连接类型。</p>
-<p>1.2 网络连接改变广播ConnectivityManager.CONNECTIVITY_ACTION</p>
-<p>  ConnectivityManager的action提供以下几种extra来进一步明确发生改变的网络状态：<br>    1）ConnectivityManager.EXTRA_IS_FAILOVER：值为true说明当前的连接是首选网络失效重连后的连接；<br>    2）ConnectivityManager.EXTRA_NO_CONNECTIVITY：值为true表示当前设备没有连接到网络；<br>    3）ConnectivityManager.EXTRA_REASON：如果当前的广播代表网络失效，则这个值包含了连接失效的原因描述；<br>    4）ConnectivityManager.EXTRA_NETWORK_INFO：返回NetworkInfo对象，包含了当前连接事件相关的网络详细信息；<br>    5）ConnectivityManager.EXTRA_OTHER_NETWORK_INFO：在一个网络断开连接时，这个值返回NetworkInfo对象，包含了可能的网络失效重连的详细信息；<br>    6）ConnectivityManager.EXTRA_EXTRA_INFO：包含可选的网络连接的额外信息。<br>2.WifiManager<br>WifiManager控制WiFi的打开和关闭，以及WiFi的状态，获取控制类服务：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">WifiManager wifiManager = (WifiManager) context.getSystemService(Context.WIFI_SERVICE);</div></pre></td></tr></table></figure></p>
-<p>需要在AndroidManifest.xml文件中加入如下的权限：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">&lt;uses-permission android:name=<span class="string">"android.permission.ACCESS_NETWORK_STATE"</span>/&gt;</div><div class="line">&lt;uses-permission android:name=<span class="string">"android.permission.CHANGE_NETWORK_STATE"</span>/&gt;</div></pre></td></tr></table></figure></p>
-<p>WifiManager 可以控制WiFi的开关，以及反馈WiFi的状态。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">wifiManager.setWifiEnabled(<span class="built_in">enable</span>);</div></pre></td></tr></table></figure></p>
-<p>3.WifiConfiguration<br> 连接到网络时使用WifiConfiguration来配置网络信息，每个WiFi配置一般都会包含以下几个公共的数据项：<br> 1）BSSID：指明接入点的BSSID；<br>2）SSID：某一特定网络的SSID；<br>3）networkId：用来唯一标识当前设备使用的网络配置的id；<br>4）priority：选择连接哪个接入点时要使用的每个网络配置的优先权；<br>5）status：当前网络连接的状态，取值如下：<br>WifiConfiguration.Status.ENABLED，WifiConfiguration.Status.DISABLED，<br>WifiConfiguration.Status.CURRENT。<br>WifiConfiguration对象中还包括支持的认证技术以及用于与接入点进行认证的密钥。</p>
-<p>###Links</p>
+        <p>WiFi控制比较常用的类有三个:<br><figure class="highlight ebnf"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="attribute">ConnectivityManager</div><div class="line">WifiManager</div><div class="line">WifiConfiguration</span></div></pre></td></tr></table></figure></p>
+<p>网络主要的状态有三个：</p>
 <ul>
-<li><a href="http://www.2cto.com/kf/201202/119232.html" target="_blank" rel="external">访问Android硬件资源の管理网络和Wifi连</a></li>
-</ul>
-
+<li>没有打开WiFi或者移动数据</li>
+<li>只打开了WiFi但是并没有连接任何WiFi</li>
+<li>连接了WiFi，但是网络不可用
+        
+          <a class="article-more-a" href="/blog/2017/03/16/WiFi控制类理解/#more">more >></a>
+        
       
 
       
@@ -661,11 +655,11 @@
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Hexo</a>
+                <a href="javascript:void(0)" class="js-tag color2">Gradle</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Gradle</a>
+                <a href="javascript:void(0)" class="js-tag color5">Hexo</a>
               </li>
              
               <li class="article-tag-list-item">

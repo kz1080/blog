@@ -8,16 +8,31 @@
   <link rel="dns-prefetch" href="https://kz1080.github.io/blog">
   <title>WiFi控制类理解 | 科子的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="WiFi控制比较常用的类有三个类操作，网络主要的状态有三个：12345678910* 没有打开WiFi或者移动数据* 只打开了WiFi但是并没有连接任何WiFi* 连接了WiFi，但是网络不可用&amp;lt;!-- more --&amp;gt;1.ConnectivityManager  ConnectivityManager类是网络连接服务管理类，连接的网络状态包括WiFi和移动网络的信息都是通过它来获取：">
+  <meta name="description" content="WiFi控制比较常用的类有三个:123ConnectivityManagerWifiManagerWifiConfiguration
+网络主要的状态有三个：
+
+没有打开WiFi或者移动数据
+只打开了WiFi但是并没有连接任何WiFi
+连接了WiFi，但是网络不可用">
 <meta property="og:type" content="article">
 <meta property="og:title" content="WiFi控制类理解">
 <meta property="og:url" content="https://kz1080.github.io/blog/2017/03/16/WiFi控制类理解/index.html">
 <meta property="og:site_name" content="科子的博客">
-<meta property="og:description" content="WiFi控制比较常用的类有三个类操作，网络主要的状态有三个：12345678910* 没有打开WiFi或者移动数据* 只打开了WiFi但是并没有连接任何WiFi* 连接了WiFi，但是网络不可用&amp;lt;!-- more --&amp;gt;1.ConnectivityManager  ConnectivityManager类是网络连接服务管理类，连接的网络状态包括WiFi和移动网络的信息都是通过它来获取：">
-<meta property="og:updated_time" content="2017-03-16T11:57:11.807Z">
+<meta property="og:description" content="WiFi控制比较常用的类有三个:123ConnectivityManagerWifiManagerWifiConfiguration
+网络主要的状态有三个：
+
+没有打开WiFi或者移动数据
+只打开了WiFi但是并没有连接任何WiFi
+连接了WiFi，但是网络不可用">
+<meta property="og:updated_time" content="2017-03-16T12:54:38.266Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="WiFi控制类理解">
-<meta name="twitter:description" content="WiFi控制比较常用的类有三个类操作，网络主要的状态有三个：12345678910* 没有打开WiFi或者移动数据* 只打开了WiFi但是并没有连接任何WiFi* 连接了WiFi，但是网络不可用&amp;lt;!-- more --&amp;gt;1.ConnectivityManager  ConnectivityManager类是网络连接服务管理类，连接的网络状态包括WiFi和移动网络的信息都是通过它来获取：">
+<meta name="twitter:description" content="WiFi控制比较常用的类有三个:123ConnectivityManagerWifiManagerWifiConfiguration
+网络主要的状态有三个：
+
+没有打开WiFi或者移动数据
+只打开了WiFi但是并没有连接任何WiFi
+连接了WiFi，但是网络不可用">
   
     <link rel="alternative" href="/atom.xml" title="科子的博客" type="application/atom+xml">
   
@@ -151,7 +166,15 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>WiFi控制比较常用的类有<figure class="highlight plain"><figcaption><span>三个类操作，网络主要的状态有三个：</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">* 没有打开WiFi或者移动数据</div><div class="line">* 只打开了WiFi但是并没有连接任何WiFi</div><div class="line">* 连接了WiFi，但是网络不可用</div><div class="line"></div><div class="line">&lt;!-- more --&gt;</div><div class="line">1.ConnectivityManager</div><div class="line">  ConnectivityManager类是网络连接服务管理类，连接的网络状态包括WiFi和移动网络的信息都是通过它来获取：</div><div class="line"> ```bash</div><div class="line"> 	 ConnectivityManager connectivityManager = (ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE);</div><div class="line">     NetworkInfo networkInfo = connectivityManager.getActiveNetworkInfo();</div></pre></td></tr></table></figure></p>
+        <p>WiFi控制比较常用的类有三个:<br><figure class="highlight ebnf"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="attribute">ConnectivityManager</span></div><div class="line">WifiManager</div><div class="line">WifiConfiguration</div></pre></td></tr></table></figure></p>
+<p>网络主要的状态有三个：</p>
+<ul>
+<li>没有打开WiFi或者移动数据</li>
+<li>只打开了WiFi但是并没有连接任何WiFi</li>
+<li>连接了WiFi，但是网络不可用<a id="more"></a>
+</li>
+</ul>
+<p>1.ConnectivityManager<br>  ConnectivityManager类是网络连接服务管理类，连接的网络状态包括WiFi和移动网络的信息都是通过它来获取：<br> <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">ConnectivityManager connectivityManager = (ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE);</div><div class="line">  NetworkInfo networkInfo = connectivityManager.getActiveNetworkInfo();</div></pre></td></tr></table></figure></p>
 <p>需要在AndroidManifest.xml文件中加入如下的权限：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">&lt;uses-permission android:name=<span class="string">"android.permission.ACCESS_NETWORK_STATE"</span>/&gt;</div><div class="line">&lt;uses-permission android:name=<span class="string">"android.permission.CHANGE_NETWORK_STATE"</span>/&gt;</div></pre></td></tr></table></figure></p>
 <p>NetworkInfo 包含了当前连接的网络信息，主要有连接的网络类型，网络是否可以等简单的信息。</p>
 <p>  1.1设置首选网络<br>  <figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">connectivityManager</span><span class="selector-class">.setNetworkPreference</span>(<span class="selector-tag">ConnectivityManager</span><span class="selector-class">.TYPE_WIFI</span>);</div></pre></td></tr></table></figure></p>
@@ -394,11 +417,11 @@
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Hexo</a>
+                <a href="javascript:void(0)" class="js-tag color2">Gradle</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Gradle</a>
+                <a href="javascript:void(0)" class="js-tag color5">Hexo</a>
               </li>
              
               <li class="article-tag-list-item">
